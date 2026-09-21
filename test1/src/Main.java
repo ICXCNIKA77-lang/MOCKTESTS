@@ -1,0 +1,50 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+void main() {
+
+    String[] Months = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN"};
+    int[][] MakeOvers = {{8, 2, 5}, {7, 4, 5}, {5, 5, 2}, {2, 2, 3}, {7, 7, 9}, {7, 8, 5}};
+
+    System.out.println("-----------------------------------------------------------------------------------------");
+    System.out.println("HOME MAKEOVER REPORT");
+    System.out.println("------------------------------------------------------------------------------------------");
+
+    System.out.printf("%-20s", " ");
+
+    System.out.printf("%-20s%-20s%-18s\n", "Bathroom", "Kitchens", "Garden");
+
+    for (int row = 0; row < Months.length; row ++) {
+        System.out.printf("%-20s", Months[row]);
+
+        for (int clm = 0; clm < MakeOvers[row].length; clm ++){
+            System.out.printf("%-20d", MakeOvers[row][clm]);
+        }
+
+        System.out.println();
+    }
+
+    System.out.println("-----------------------------------------------------------------------------------------");
+    System.out.println("MONTHLY TOTALS");
+    System.out.println("------------------------------------------------------------------------------------------");
+
+    for (int row =0; row < Months.length; row ++){
+        int total = 0;
+
+
+
+        for (int clm = 0; clm < MakeOvers[row].length; clm++){
+            total += MakeOvers[row][clm];
+        }
+
+        String stars = "";
+        if (total >= 15){
+            stars = "***";
+        }
+
+        System.out.printf("%-20s%-10d %s\n", Months[row], total, stars);
+
+    }
+
+    System.out.println("------------------------------------------------------------------------------------------");
+
+}
